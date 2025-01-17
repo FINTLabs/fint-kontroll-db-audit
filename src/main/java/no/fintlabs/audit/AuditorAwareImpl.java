@@ -16,7 +16,7 @@ public class AuditorAwareImpl implements AuditorAware<String> {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            return Optional.empty();
+            return Optional.of("kafka");
         }
 
         if (authentication instanceof final JwtAuthenticationToken jwtToken) {
