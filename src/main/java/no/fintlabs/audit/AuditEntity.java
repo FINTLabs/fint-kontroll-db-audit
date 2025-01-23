@@ -14,7 +14,7 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 @SuperBuilder
-public abstract class AuditEntity {
+public class AuditEntity {
     @CreatedDate
     private Instant createdDate;
 
