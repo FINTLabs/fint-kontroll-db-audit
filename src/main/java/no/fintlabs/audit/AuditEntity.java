@@ -2,6 +2,7 @@ package no.fintlabs.audit;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -12,7 +13,8 @@ import java.time.Instant;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class AuditEntity {
+@SuperBuilder
+public abstract class AuditEntity {
     @CreatedDate
     private Instant createdDate;
 
