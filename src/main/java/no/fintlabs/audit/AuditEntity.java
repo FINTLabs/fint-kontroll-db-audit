@@ -17,6 +17,7 @@ import java.time.Instant;
 @MappedSuperclass
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 public class AuditEntity {
     @CreatedDate
     private Instant createdDate;
